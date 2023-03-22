@@ -24,7 +24,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Python 3.9
+    - name: Set up Python 3.11
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
@@ -39,5 +39,5 @@ jobs:
         python -m pytest --cov=inflammation.models tests/test_models.py
 
     - name: Check style with Pylint
-          run: |
-            python -m pylint --fail-under=0 --reports=y inflammation
+      run: |
+        python -m pylint --fail-under=0 --reports=y inflammation
