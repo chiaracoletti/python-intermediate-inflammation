@@ -23,3 +23,17 @@ def visualize(data_dict):
     fig.tight_layout()
 
     plt.show()
+
+
+def textual_view(data_dict):
+    """Display textual representation of statistics thorugh an optional command line argument.
+
+    :param data_dict: Dictionary of name -> data to summarize
+    """
+    for i, (name, data) in enumerate(data_dict.items()):
+        if name == 'average':
+            print('The overall', name, ' is ', np.mean(data), '.\n')
+        if name == 'min':
+            print('The overall', name, ' is ', np.min(data), '.\n')
+        if name == 'max':
+            print('The overall', name, ' is ', np.max(data), '.\n')
